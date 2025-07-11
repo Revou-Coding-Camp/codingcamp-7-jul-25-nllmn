@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo - Enhanced</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-indigo-100 via-white to-cyan-100 flex flex-col items-center justify-evenly text-gray-800">
+  <header class="mt-6">
+    <h1 class="text-4xl font-bold tracking-wide">✨ To-Do List ✨</h1>
+    <p class="text-sm text-gray-500">Organize your day with style</p>
+  </header>
+
+  <main class="bg-white shadow-lg p-6 mt-6 rounded-2xl w-[90%] max-w-xl">
+    <form class="flex flex-col md:flex-row gap-3 mb-4">
+      <input type="text" id="task-input" class="flex-1 border border-gray-300 rounded px-4 py-2" placeholder="Add a new task" required>
+      <input type="date" id="due-date-input" class="flex-1 border border-gray-300 rounded px-4 py-2" required>
+      <button type="button" class="bg-blue-600 hover:bg-blue-700 text-white rounded px-5 py-2" onclick="addTask();">+</button>
+    </form>
+
+    <div class="flex justify-between items-center mb-4">
+      <div class="flex gap-2">
+        <button onclick="filterTasks('completed')" class="bg-green-200 hover:bg-green-300 px-3 py-1 rounded">Show Completed</button>
+        <button onclick="filterTasks('all')" class="bg-blue-200 hover:bg-blue-300 px-3 py-1 rounded">Show All</button>
+      </div>
+      <button onclick="deleteAllTasks();" class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">Delete All</button>
+    </div>
+
+    <input type="text" id="search-input" placeholder="Search task..." oninput="filterTasks('search')" class="w-full mb-4 px-3 py-2 border border-gray-300 rounded" />
+
+    <div id="task-list" class="space-y-3">
+      <p class="text-center text-gray-400">Task is Empty!</p>
+    </div>
+  </main>
+
+  <footer class="mt-6 text-sm text-gray-500">
+    © 2025 Enhanced Todo App. All rights reserved.
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
